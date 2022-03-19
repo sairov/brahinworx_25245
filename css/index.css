@@ -1,0 +1,256 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap');
+
+/* Variables */
+
+:root {
+    --principal: #163a5d;
+    --secondary: #FFFFFF;
+    --font-primary: "Inter", sans-serif;
+    --font-secondary: "Bowly One SC", cursive;
+    --text-lg: 2em;
+    --text-md: 1.8em; 
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Globals */
+
+html {
+    font-size: 62.5%;
+    font-family: var(--font-primary);
+    color: var(--secondary);
+    background: var(--principal);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/* Helpers */
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--principal);
+}
+
+header .navbar {
+    min-height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+header .logo {
+    flex-basis: 30%;
+}
+
+header .menu {
+    flex-basis: 40%;
+    justify-content: space-between;
+}
+
+header .menu__item {
+    border: 2px solid var(--principal);
+    transition: border-color .3s ease-in-out;
+}
+
+.menu .menu__item:hover {
+    border-color: var(--secondary);
+}
+
+.menu .menu__item .menu__link {
+    font-size: 1.8em;
+    padding: 1rem;
+}
+
+.menu .menu__item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link {
+    padding: 1rem;
+    font-size: 1.4em;
+    transition: all .3s ease-in-out;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link:hover {
+    background-color: var(--secondary);
+    color: var(--principal);
+}
+
+/* MAIN SECTION*/
+
+.presentation {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.presentation__picture {
+    flex-basis: 50%;
+    min-width: 320px;
+}
+
+.presentation__img {
+    width: 100%;
+}
+
+.presentation__container {
+    flex-basis: 50%;
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    /* animation: be_crazy infinite alternate ease-in-out 5s; */
+}
+
+.presentation__container p{
+    font-size: 3.2em;
+}
+
+.presentation__container h1{
+    font-size: 6.8em;
+    text-transform: uppercase;
+}
+
+.presentation__badge img {
+    animation: fancy_rotate 4s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* transition: transform 3s ease-in-out; */
+}
+
+/* .presentation__badge img:hover {
+    transform: rotate(170deg) scale(1.5);
+} */
+
+/* FORM */
+
+.form {
+    gap: 2rem;
+}
+
+.form label {
+    font-size: 1.2em;
+}
+
+.form__input-text {
+    padding: .8rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 30px;
+    transition: all .6s linear;
+}
+
+.form__input-text:focus {
+    width: 120px;
+}
+
+/* FOOTER */
+
+footer {
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 2em;
+    }
+
+    header .navbar {  
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .presentation {
+        flex-wrap: wrap;
+    }
+
+    .presentation__picture {
+        flex-grow: 1;
+    }
+
+    .presentation__description {
+        flex-grow: 1;
+        order: -1;
+    }
+
+    .menu {
+        font-size: .8em;
+    }
+}
+
+@keyframes be_crazy {
+    0% {
+        width: 100%;
+    }
+    25% {
+        width: 500px;
+    }
+    50% {
+        width: 300px;
+        background-color: crimson;
+    }
+    75% {
+        width: 500px;
+    }
+    100% {
+        width: 100%;
+        background-color: var(--principal);
+    }
+}
+
+@keyframes fancy_rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
