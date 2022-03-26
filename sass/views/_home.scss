@@ -1,0 +1,55 @@
+.presentation {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+
+    &__picture {
+        flex-basis: 50%;
+        min-width: 320px;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__container {
+        flex-basis: 50%;
+        color: $secondary;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+
+        p {
+            font-size: 3.2em;
+        }
+
+        h1 {
+            font-size: 6.8em;
+            text-transform: uppercase;
+        }
+    }
+    
+    &__badge img {
+        animation: fancy_rotate 4s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .presentation {
+        flex-wrap: wrap;
+        
+    
+        &__picture {
+            flex-grow: 1;
+        }
+    
+        &__description {
+            flex-grow: 1;
+            order: -1;
+        }
+    }
+}
+

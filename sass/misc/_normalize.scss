@@ -1,0 +1,38 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBALS */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    font-family: $font-primary;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    color: $secondary;
+    background: $principal;
+}
+
+ol, ul {
+    padding-left: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}

@@ -1,0 +1,73 @@
+header {
+    background-color: $principal;
+
+    .navbar {
+        min-height: 10vh;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 2rem;
+    }
+
+    .logo {
+        flex-basis: 30%;
+    }
+
+    .menu {
+        flex-basis: 40%;
+        justify-content: space-between;
+
+        &__item {
+            border: 2px solid $principal;
+            transition: border-color .3s ease-in-out;
+
+            &:hover {
+                border-color: $secondary;
+            }
+
+            .menu__link {
+                font-size: 1.8em;
+                padding: 1rem;
+            }
+        }
+
+    }
+
+}
+
+
+.menu .menu__item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link {
+    padding: 1rem;
+    font-size: 1.4em;
+    transition: all .3s ease-in-out;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link:hover {
+    background-color: $secondary;
+    color: $principal;
+}
+
+@media screen and (max-width: 768px) {
+    header { 
+        padding: 2em;
+
+        .navbar {  
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .menu {
+            font-size: .8em;
+        }
+
+    }
+}

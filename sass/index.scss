@@ -1,0 +1,24 @@
+/* IMPORTS */
+
+/* MISCELANEOUS */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap');
+@import './misc/variables';
+
+@import './misc/normalize';
+@import './misc/mixins';
+@import './misc/animations';
+
+/* PARTIALS */
+
+@import './partials/header';
+@import './partials/footer';
+
+/* VIEWS */
+
+@import './views/home';
+@import './views/nosotros';
+
+
+
+
+
