@@ -14,13 +14,23 @@ html {
     font-size: 62.5%;
 }
 
+$theme: 'dark';
+
 body {
     display: grid;
     font-family: $font-primary;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    color: $secondary;
+    color: $light;
     background: $principal;
+
+   @if $theme == 'dark' {
+        background-color: $principal;
+    } @else if $theme == 'light' {
+        background-color: $light;
+    } @else {
+        background-color: crimson;
+    } 
 }
 
 ol, ul {

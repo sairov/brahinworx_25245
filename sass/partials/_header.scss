@@ -3,9 +3,7 @@ header {
 
     .navbar {
         min-height: 10vh;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        @include flex(row, space-between, center, 2rem, wrap);
         padding: 0 2rem;
     }
 
@@ -15,11 +13,16 @@ header {
 
     .menu {
         flex-basis: 40%;
-        justify-content: space-between;
+        @include flex($justify: space-between, $align: center, $gap: 2rem, $wrap: nowrap);
 
         &__item {
             border: 2px solid $principal;
             transition: border-color .3s ease-in-out;
+        
+            &--active {
+                @extend .menu__item;
+                border-bottom: 2px solid cyan;
+            }
 
             &:hover {
                 border-color: $secondary;
@@ -34,7 +37,6 @@ header {
     }
 
 }
-
 
 .menu .menu__item:hover .sub-menu {
     display: block;
